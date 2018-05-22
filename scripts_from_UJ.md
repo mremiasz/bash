@@ -1,4 +1,4 @@
-## Pierwsza część.
+## Pierwsza część
 Plik oceny.txt:
 ```
 imie i nazwisko Oceny
