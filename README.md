@@ -10,17 +10,35 @@ Maria Modrzejewska 2,3,4,3
 #### Zadanie 01
 W pliku oceny.txt znajduja sie oceny studentow w formacie Imie i Nazwisko a nastepnie podane sa oceny oddzielone przecinkami, nalezy wyswietlic plik zawartosc pliku z ocenami tak aby najpierw być nazwisko a dopiero pozniej imie i to w kolejnosci alfabetycznej najpierw wzgledem nazwiska, a nastepnie wzgledem imienia, oraz aby nie pojawila sie wyswietlana linia naglowka.
 
+```
+cat oceny.txt | awk '{print $2" "$1" "$3}' | sort
+```
+
 #### Zadanie 02
 Wpisujac oceny mozna czasem poeplnic blad wpisujac niepoprawna wartosc, to tez ma miejsce w przypadku danych z zadania 001. Jenda z ocen jest niepoprawna. Jak za pomoca komend wydanych w jednej linii odnalezc wpis w ktorym  jest niepoprawna ocena.
+```
+ cat oceny.txt | egrep -v '(2,|3,|3\.5|4,|4\.5|5,)(2|3|3\.5|4|4\.5|5)$' | awk '{print $2" "$1" "$3}'
+```
 
 #### Zadanie 03
 Lista ocen to bardzo wa¿na rzecz wiec warto zrobic jej kopie bezpieczenstwa. Proszê o napisanie komendy która z pliku oceny.txt stworzy plik oceny.{aktualna data}.txt
+```
+cp oceny.txt oceny_$(date +"%Y_%m_%d").txt
+```
 
 #### Zadanie 04
 Rozszerzenie pliku txt, ktore otrzymalismy w ostatnim zadaniu nie jest najlepsze, gdyz nie sugeruje, ze utworzony plik jest kopia (z reguly takie kopie maja rozszerzenie bak). Prosze zatem zmienic rozszerzenie utowrzonego pliku na bak, jednak aby nie wpisywac za duzo polecen, to nalezy wykorzystac mechanizmy historii.
+```
+!!.bak
+```
 
 #### Zadanie 05
 Umieść plik oceny.txt z ocenami w katalogu wyniki. A następnie udostępnij zawartość tego pliku wszytkim zainteresowanym osobom, w taki sposób aby nie mogły przeglądać zawartości katalogu wyniki, a jedynie  zawartość tego pliku.
+```
+mkdir -m 711 oceny
+mv oceny.txt oceny
+chmod 644 oceny.txt
+```
 
 #### Zadanie 06
 Utworz grupe student oraz grupe nauczyciel (obcięty do 8 znaków) do grupy studentow nalezy dodac 2 osoby Anne Nowak, Jaroslawa Zimka, Marie Modrzejewska. Jako login nalezy podac 8 pierwszych liter nazwiska. Podobnie do grupy nauczyciel dodaj osoby Stefan Kaczka, Leszek Jastrzab.
