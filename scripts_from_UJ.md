@@ -79,7 +79,7 @@ Niektorzy studenci to leserzy, napisz komende, która spowoduje wyswietlenie oso
 #### Zadanie 10
 Przy jednych z nastêpnych zadañ przyda siê nam oprogramowanie do tworzenia tzw. analizatorów leksykalnych flex. Proszê zatem o zainstalowanie takiego oprogramowania.
 
-## Druga część.
+## Druga część
 Plik Zadania.005.txt:
 ```
 awk0
