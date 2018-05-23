@@ -29,7 +29,7 @@ counter=0
 for k in $files ; do 	#start petli w ktorej iterujemy po wszystkich elementach tablicy
 	  let counter=$counter+1
 	  echo "File_name : ""$k"$'\n'"$(cat -- "$k")" > "$k" 	
-	  #do każdego pliku .txt dodajemy w pierwszej lini napis z nazwą pliku - nazwą analizowanego przypadku
+	  #do każdego pliku .txt dodajemy w pierwszej lini napis z nazwą pliku
 	  if [[ $counter -eq 1 ]]
 		then
 		awk '{print $1}' $k |		#z pierwszego pliku bierzemy nagłówki do nazw kolumn
@@ -70,8 +70,8 @@ for k in $files ; do 	#start petli w ktorej iterujemy po wszystkich elementach t
 					print str
 				}
 			}
-			' >> transpond_$dateNow.txt		#nazwa pliku z wynikami	
-	else							#transponowanie kolumn z danymi do wierszy dla pozostałych plikow
+			' >> transpond_$dateNow.txt	#nazwa pliku z wynikami	
+	else						#transponowanie kolumn z danymi do wierszy dla pozostałych plikow
 		#sed 's/[^0-9]* //' $k |
 		awk '{print " "$3}' $k |
 			awk '
@@ -91,9 +91,9 @@ for k in $files ; do 	#start petli w ktorej iterujemy po wszystkich elementach t
 					print str
 				}
 			}
-			' >> transpond_$dateNow.txt		#nazwa pliku z wynikami	
+			' >> transpond_$dateNow.txt	#nazwa pliku z wynikami	
 
 		fi
 done
-echo "Finished"												#powiadomienie o zakończeniu działania skryptu
+echo "Finished"						#powiadomienie o zakończeniu działania skryptu
 ```
