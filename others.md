@@ -1,4 +1,11 @@
 Dodaj skrypt do transpozycji danych w plikach .txt
+wynik:
+```
+File_name Zmienna1 Zmienna2 Zmienna3
+Plik1.txt XXX	YYY	ZZZ
+```
+
+
 ```bash
 #!/bin/bash
 dateNow=$(date "+%Y_%b_%d")
