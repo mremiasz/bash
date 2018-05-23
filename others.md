@@ -1,4 +1,4 @@
-Skrypt do transpozycji danych w plikach .txt, które znajdują się w danym folderze.
+Skrypt do transpozycji danych w plikach .txt, które znajdują się w danym folderze. Metoda transpozycji z kolumn na rzędy została wykorzystana z innego rozwiązania znalezionego w sieci.
 
 W folderze są plik:
 ```
